@@ -19,7 +19,7 @@ if (fs.existsSync(cwd + '/Gbuilder.js')) {
 
 function checkUpdate (callback) {
     builder.checkUpdate(function (err, update) {
-        if (update) {
+        if (update && update.latest !== update.current) {
             console.log('-------------------------------------------'.cyan);
             console.log('Update available: %s %s', update.latest.blue, ('(current:' + update.current + ')').grey);
             console.log('Run %s to update', ('npm update ' + update.name).red);
@@ -28,7 +28,7 @@ function checkUpdate (callback) {
         require('update-notifier')({
             packagePath: path.resolve(__dirname, '../package.json'),
             callback: function (err, update) {
-                if (update) {
+                if (update && update.latest !== update.current) {
                     console.log('-------------------------------------------'.cyan);
                     console.log('Update available: %s %s', update.latest.blue, ('(current:' + update.current + ')').grey);
                     console.log('Run %s to update', ('npm update -g' + update.name).red);
