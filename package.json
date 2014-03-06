@@ -1,7 +1,7 @@
 {
   "name": "g-builder-cli",
   "description": "cli for g-builder",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/G-js/G-builder-cli",
   "author": {
     "name": "j1anb1n",
